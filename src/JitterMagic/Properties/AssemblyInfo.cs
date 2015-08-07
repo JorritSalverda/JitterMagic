@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("JitterMagic")]
-[assembly: AssemblyDescription("A c# library to add jitter to cache durations or any other values.")]
+[assembly: AssemblyDescription("A c# library to add jitter to cache durations or any other values")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("JitterMagic")]
