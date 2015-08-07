@@ -1,2 +1,2 @@
 language: csharp
-solution: JitterMagic.sln
+solution: src/JitterMagic.sln
