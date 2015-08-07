@@ -26,21 +26,21 @@ namespace JitterMagic
         }
 
         /// <summary>
-        /// Applies jitter to the <param name="input">input</param> using the DefaultPercentage property
+        /// Applies jitter to the <see cref="input" /> using the DefaultPercentage property
         /// </summary>
         /// <param name="input">An integer you want to apply jitter to</param>
-        /// <returns>A random number between <param name="input">input</param> +/- DefaultPercentage %</returns>
+        /// <returns>A random number between <see cref="input" /> +/- DefaultPercentage %</returns>
         public static int Apply(int input)
         {
             return Apply(input, DefaultPercentage);
         }
 
         /// <summary>
-        /// Applies jitter to the <param name="input">input</param> using the <param name="input">percentage</param> parameter
+        /// Applies jitter to the <see cref="input" /> using the <see cref="percentage" /> parameter
         /// </summary>
         /// <param name="input">An integer you want to apply jitter to</param>
-        /// <param name="percentage">An integer that has the percentage of the <param name="input">input</param> to go below and above the <param name="input">input</param> as outer bounds</param>
-        /// <returns>A random number between <param name="input">input</param> +/- percentage%</returns>
+        /// <param name="percentage">An integer that has the percentage of the <see cref="input" /> to go below and above the <see cref="input" /> as outer bounds</param>
+        /// <returns>A random number between <see cref="input" /> +/- percentage%</returns>
         public static int Apply(int input, int percentage)
         {
             if (percentage <= 0 || percentage >= 100)
@@ -55,21 +55,21 @@ namespace JitterMagic
         }
 
         /// <summary>
-        /// Applies jitter to the <param name="input">input</param> using the DefaultPercentage property
+        /// Applies jitter to the <see cref="input" /> using the DefaultPercentage property
         /// </summary>
         /// <param name="input">A double you want to apply jitter to</param>
-        /// <returns>A random number between <param name="input">input</param> +/- DefaultPercentage %</returns>
+        /// <returns>A random number between <see cref="input" /> +/- DefaultPercentage %</returns>
         public static double Apply(double input)
         {
             return Apply(input, DefaultPercentage);
         }
 
         /// <summary>
-        /// Applies jitter to the <param name="input">input</param> using the <param name="input">percentage</param> parameter
+        /// Applies jitter to the <see cref="input" /> using the <see cref="percentage" /> parameter
         /// </summary>
         /// <param name="input">A double you want to apply jitter to</param>
-        /// <param name="percentage">An integer that has the percentage of the <param name="input">input</param> to go below and above the <param name="input">input</param> as outer bounds</param>
-        /// <returns>A random number between <param name="input">input</param> +/- DefaultPercentage %</returns>
+        /// <param name="percentage">An integer that has the percentage of the <see cref="input" /> to go below and above the <see cref="input" /> as outer bounds</param>
+        /// <returns>A random number between <see cref="input" /> +/- DefaultPercentage %</returns>
         public static double Apply(double input, int percentage)
         {
             if (percentage <= 0 || percentage >= 100)
