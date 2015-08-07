@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Jitter")]
-[assembly: AssemblyDescription("A c# library to add jitter to cache durations or any other values")]
+[assembly: AssemblyTitle("JitterMagic")]
+[assembly: AssemblyDescription("A c# library to add jitter to cache durations and retry intervals to increase entropy in your system and prevent thundering herds")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Jitter")]
+[assembly: AssemblyProduct("JitterMagic")]
 [assembly: AssemblyCopyright("Copyright © Jorrit Salverda 2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
