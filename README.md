@@ -38,10 +38,10 @@ double cacheDuration = Jitter.Apply(1000D, 50);
 
 ### Changing defaults
 
-The default percentages used by the smallest methods use the static JitterMagic.DefaultPercentage property. You can change it as follows
+The following defaults are used and can be changed by using the following code with different values
 
 ```csharp
-Jitter.DefaultPercentage = 50;
+Jitter.DefaultPercentage = 25;
 ```
 
 Get it
