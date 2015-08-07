@@ -2,9 +2,9 @@
 
 What is JitterMagic?
 --------------------------------
-A c# library to add jitter to cache durations or any other values.
+A c# library to add jitter to cache durations or any other values
 
-The library is inspired by [YouTube's strategy to add entropy](http://highscalability.com/blog/2012/4/17/youtube-strategy-adding-jitter-isnt-a-bug.html) to large systems by adding randomness to cache expiry durations and other intervals.
+The library is inspired by [YouTube's strategy to add entropy](http://highscalability.com/blog/2012/4/17/youtube-strategy-adding-jitter-isnt-a-bug.html) to large systems by adding randomness to cache expiry durations and other intervals
 
 How do I use JitterMagic?
 --------------------------------
