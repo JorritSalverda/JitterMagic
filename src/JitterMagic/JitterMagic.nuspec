@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>JitterMagic</id>
+    <title>JitterMagic entropy library</title>
+    <version>1.0.0.0</version>
+    <authors>Jorrit Salverda</authors>
+    <owners>Jorrit Salverda</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A c# library to add jitter to cache durations or any other values.</description>
+    <tags>entropy jitter</tags>
+    <projectUrl>https://github.com/JorritSalverda/JitterMagic/</projectUrl>
+    <licenseUrl>https://github.com/JorritSalverda/JitterMagic/blob/master/LICENSE</licenseUrl>
+  </metadata>
+  <files>
+    <file src="bin\release\JitterMagic.dll" target="lib\net40\" />
+    <file src="bin\release\JitterMagic.pdb" target="lib\net40\" />
+  </files>
+</package>
