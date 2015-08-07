@@ -9,7 +9,7 @@ The library is inspired by [YouTube's strategy to add entropy](http://highscalab
 Build status
 --------------------------------
 
-[![Build Status](https://travis-ci.org/JorritSalverda/JitterMagic.svg)](https://travis-ci.org/JorritSalverda/JitterMagic)
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/JorritSalverda/JitterMagic?svg=true)](https://ci.appveyor.com/project/JorritSalverda/jittermagic/)
 
 How do I use JitterMagic?
 --------------------------------
