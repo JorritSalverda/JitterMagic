@@ -1,17 +1,16 @@
 # JitterMagic
 
-What is JitterMagic?
+A c# library to add jitter to cache durations and retry intervals to increase entropy in your system and prevent thundering herds
+
+[![Build Status](https://img.shields.io/appveyor/ci/JorritSalverda/JitterMagic.svg)](https://ci.appveyor.com/project/JorritSalverda/jittermagic/)
+[![NuGet downloads](https://img.shields.io/nuget/dt/JitterMagic.svg)](https://www.nuget.org/packages/JitterMagic)
+[![Version](https://img.shields.io/nuget/v/JitterMagic.svg)](https://www.nuget.org/packages/JitterMagic)
+
+Why?
 --------------------------------
-A c# library to add jitter to cache durations or any other values
+The library is inspired by [YouTube's strategy to add entropy](http://highscalability.com/blog/2012/4/17/youtube-strategy-adding-jitter-isnt-a-bug.html) to large systems by adding randomness to cache expiry durations
 
-The library is inspired by [YouTube's strategy to add entropy](http://highscalability.com/blog/2012/4/17/youtube-strategy-adding-jitter-isnt-a-bug.html) to large systems by adding randomness to cache expiry durations and other intervals
-
-Build status
---------------------------------
-
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/JorritSalverda/JitterMagic?svg=true)](https://ci.appveyor.com/project/JorritSalverda/jittermagic/)
-
-How do I use JitterMagic?
+Usage
 --------------------------------
 Use it with either the default percentage of 25
 
@@ -45,7 +44,7 @@ The default percentages used by the smallest methods use the static JitterMagic.
 Jitter.DefaultPercentage = 50;
 ```
 
-Where can I get it?
+Get it
 --------------------------------
 First, [install NuGet](http://docs.nuget.org/docs/start-here/installing-nuget). Then, install [JitterMagic](https://www.nuget.org/packages/JitterMagic/) from the package manager console:
 
