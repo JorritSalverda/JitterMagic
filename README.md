@@ -5,6 +5,8 @@ A c# library to add jitter to cache durations and retry intervals to increase en
 [![Build Status](https://img.shields.io/appveyor/ci/JorritSalverda/JitterMagic.svg)](https://ci.appveyor.com/project/JorritSalverda/jittermagic/)
 [![NuGet downloads](https://img.shields.io/nuget/dt/JitterMagic.svg)](https://www.nuget.org/packages/JitterMagic)
 [![Version](https://img.shields.io/nuget/v/JitterMagic.svg)](https://www.nuget.org/packages/JitterMagic)
+[![License](https://img.shields.io/github/license/JorritSalverda/JitterMagic.svg)](https://github.com/JorritSalverda/JitterMagic/blob/master/LICENSE)
+[![Issues](https://img.shields.io/github/issues/JorritSalverda/JitterMagic.svg)](https://github.com/JorritSalverda/JitterMagic/issues)
 
 Why?
 --------------------------------
@@ -50,4 +52,4 @@ First, [install NuGet](http://docs.nuget.org/docs/start-here/installing-nuget). 
 
     PM> Install-Package JitterMagic
 
-JitterMagic is Copyright &copy; 2015 [Jorrit Salverda](http://blog.jorritsalverda.com/) and other contributors under the [MIT license](LICENSE.txt).
+JitterMagic is Copyright &copy; 2015 [Jorrit Salverda](http://blog.jorritsalverda.com/) and other contributors under the [MIT license](https://github.com/JorritSalverda/JitterMagic/blob/master/LICENSE).
