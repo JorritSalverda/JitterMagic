@@ -8,7 +8,8 @@ The library is inspired by [YouTube's strategy to add entropy](http://highscalab
 
 Latest builds
 --------------------------------
-[Travis CI](https://travis-ci.org/JorritSalverda/JitterMagic) ![#](https://travis-ci.org/JorritSalverda/JitterMagic.svg)
+
+[Travis CI](https://travis-ci.org/JorritSalverda/JitterMagic) [![Build Status](https://travis-ci.org/JorritSalverda/JitterMagic.svg)](https://travis-ci.org/JorritSalverda/JitterMagic)
 
 How do I use JitterMagic?
 --------------------------------
