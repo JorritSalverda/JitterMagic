@@ -3,9 +3,9 @@
 namespace JitterMagic
 {
     /// <summary>
-    /// The JitterMagic class adds entropy to any number; The degree of entropy is set by property DefaultPercentage or by the percentage in the overloaded methods
+    /// The Jitter class has methods to add entropy to any number; The degree of entropy is set by property DefaultPercentage or by the percentage in the overloaded methods
     /// </summary>
-    public static class JitterMagic
+    public static class Jitter
     {
         /// <summary>
         /// Determines the degree of entropy added to inputs by the simplest overloads
@@ -20,7 +20,7 @@ namespace JitterMagic
         /// <summary>
         /// Initialize the DefaultPercentage; it can be overriden by the consumer of this class at application startup
         /// </summary>
-        static JitterMagic()
+        static Jitter()
         {
             DefaultPercentage = 25;
         }
@@ -30,9 +30,9 @@ namespace JitterMagic
         /// </summary>
         /// <param name="input">An integer you want to apply jitter to</param>
         /// <returns>A random number between <param name="input">input</param> +/- DefaultPercentage %</returns>
-        public static int ApplyJitter(int input)
+        public static int Apply(int input)
         {
-            return ApplyJitter(input, DefaultPercentage);
+            return Apply(input, DefaultPercentage);
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace JitterMagic
         /// <param name="input">An integer you want to apply jitter to</param>
         /// <param name="percentage">An integer that has the percentage of the <param name="input">input</param> to go below and above the <param name="input">input</param> as outer bounds</param>
         /// <returns>A random number between <param name="input">input</param> +/- percentage%</returns>
-        public static int ApplyJitter(int input, int percentage)
+        public static int Apply(int input, int percentage)
         {
             if (percentage <= 0 || percentage >= 100)
             {
@@ -59,9 +59,9 @@ namespace JitterMagic
         /// </summary>
         /// <param name="input">A double you want to apply jitter to</param>
         /// <returns>A random number between <param name="input">input</param> +/- DefaultPercentage %</returns>
-        public static double ApplyJitter(double input)
+        public static double Apply(double input)
         {
-            return ApplyJitter(input, DefaultPercentage);
+            return Apply(input, DefaultPercentage);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace JitterMagic
         /// <param name="input">A double you want to apply jitter to</param>
         /// <param name="percentage">An integer that has the percentage of the <param name="input">input</param> to go below and above the <param name="input">input</param> as outer bounds</param>
         /// <returns>A random number between <param name="input">input</param> +/- DefaultPercentage %</returns>
-        public static double ApplyJitter(double input, int percentage)
+        public static double Apply(double input, int percentage)
         {
             if (percentage <= 0 || percentage >= 100)
             {

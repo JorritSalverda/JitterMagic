@@ -16,25 +16,25 @@ How do I use JitterMagic?
 Use it with either the default percentage of 25
 
 ```csharp
-int cacheDuration = JitterMagic.ApplyJitter(1000);
+int cacheDuration = Jitter.Apply(1000);
 ```
 
 or by supplying a percentage yourself
 
 ```csharp
-int cacheDuration = JitterMagic.ApplyJitter(1000, 50);
+int cacheDuration = Jitter.Apply(1000, 50);
 ```
 
 Also works for doubles
 
 ```csharp
-double cacheDuration = JitterMagic.ApplyJitter(1000D);
+double cacheDuration = Jitter.Apply(1000D);
 ```
 
 or by supplying a percentage yourself
 
 ```csharp
-double cacheDuration = JitterMagic.ApplyJitter(1000D, 50);
+double cacheDuration = Jitter.Apply(1000D, 50);
 ```
 
 ### Changing defaults
@@ -42,7 +42,7 @@ double cacheDuration = JitterMagic.ApplyJitter(1000D, 50);
 The default percentages used by the smallest methods use the static JitterMagic.DefaultPercentage property. You can change it as follows
 
 ```csharp
-JitterMagic.DefaultPercentage = 50;
+Jitter.DefaultPercentage = 50;
 ```
 
 Where can I get it?
