@@ -2,7 +2,7 @@
 
 A c# library to add jitter to cache durations and retry intervals to increase entropy in your system and prevent thundering herds
 
-[![Build Status .NET](https://img.shields.io/appveyor/ci/JorritSalverda/JitterMagic.svg)](https://ci.appveyor.com/project/JorritSalverda/jittermagic/)
+[![Build Status .NET](https://img.shields.io/appveyor/ci/JorritSalverda/JitterMagic.svg)](https://ci.appveyor.com/project/JorritSalverda/JitterMagic/)
 [![Build Status Mono](https://img.shields.io/travis/JorritSalverda/JitterMagic.svg)](https://travis-ci.org/JorritSalverda/JitterMagic/)
 [![NuGet downloads](https://img.shields.io/nuget/dt/JitterMagic.svg)](https://www.nuget.org/packages/JitterMagic)
 [![Version](https://img.shields.io/nuget/v/JitterMagic.svg)](https://www.nuget.org/packages/JitterMagic)
