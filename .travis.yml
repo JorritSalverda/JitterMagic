@@ -5,4 +5,4 @@ install:
   - nuget install xunit.runner.console -Version 2.1.0-rc1-build3110 -OutputDirectory testrunner -Source https://www.myget.org/F/xunit/
 script:
   - xbuild /p:Configuration=Release ./src/JitterMagic.sln
-  - mono ./testrunner/xunit.runner.console.2.1.0-rc1-build3110/tools/xunit.console.exe -noappdomain ./src/JitterMagic.UnitTests/bin/Release/JitterMagic.UnitTests.dll
+  - mono ./testrunner/xunit.runner.console.2.1.0-rc1-build3110/tools/xunit.console.exe ./src/JitterMagic.UnitTests/bin/Release/JitterMagic.UnitTests.dll -noappdomain
