@@ -13,14 +13,6 @@ namespace JitterMagic
 		private int percentage;
 
 		/// <summary>
-		/// Initializes a new instance of the <see cref="JitterInstance"/> class, setting percentage to static Jitter.DefaultPercentage
-		/// </summary>
-		public JitterInstance()
-		{
-			percentage = Jitter.DefaultPercentage;
-		}
-
-		/// <summary>
 		/// Initializes a new instance of the <see cref="JitterInstance"/> class, setting percentage using <see cref="percentage"/>
 		/// </summary>
 		/// <param name="percentage">Percentage.</param>
