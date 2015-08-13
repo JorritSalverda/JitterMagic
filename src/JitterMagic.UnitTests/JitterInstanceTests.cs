@@ -3,42 +3,61 @@ using Xunit;
 
 namespace JitterMagic.UnitTests
 {
-	public class JitterInstanceTests
-	{
-		[Fact]
-		public void Apply_For_Int_Returns_A_Number_Within_Percentage_Below_And_Above_Number()
-		{
-			IJitterInstance jitterInstance = new JitterInstance(25);
+    public class JitterInstanceTests
+    {
+        public class Constructor
+        {
+            [Fact]
+            public void Constructor_Throws_An_ArgumentOutOfRangeException_If_Percentage_Is_Zero_Or_Less()
+            {
+                // act + assert
+                Assert.Throws<ArgumentOutOfRangeException>(() => new JitterInstance(0));
+            }
 
-			// act
-			var result = jitterInstance.Apply(100);
+            [Fact]
+            public void Constructor_Throws_An_ArgumentOutOfRangeException_If_Percentage_Is_One_Hundred_Or_More()
+            {
+                // act + assert
+                Assert.Throws<ArgumentOutOfRangeException>(() => new JitterInstance(100));
+            }
+        }
 
-			Assert.InRange(result, 75, 125);
-		}
+        public class ApplyForInt
+        {
+            private readonly IJitterInstance jitterInstance;
 
-		[Fact]
-		public void Apply_For_Double_Returns_A_Number_Within_Percentage_Below_And_Above_Number()
-		{
-			IJitterInstance jitterInstance = new JitterInstance(25);
+            public ApplyForInt()
+            {
+                jitterInstance = new JitterInstance(25);
+            }
 
-			// act
-			var result = jitterInstance.Apply(100d);
+            [Fact]
+            public void Returns_A_Number_Within_Percentage_Below_And_Above_Number()
+            {
+                // act
+                var result = jitterInstance.Apply(100);
 
-			Assert.InRange(result, 75d, 125d);
-		}
+                Assert.InRange(result, 75, 125);
+            }
+        }
 
-		[Fact]
-		public void Constructor_Throws_An_ArgumentOutOfRangeException_If_Percentage_Is_Zero_Or_Less()
-		{
-			// act + assert
-			Assert.Throws<ArgumentOutOfRangeException>(() => new JitterInstance(0));
-		}
+        public class ApplyForDouble
+        {
+            private readonly IJitterInstance jitterInstance;
 
-		[Fact]
-		public void Constructor_Throws_An_ArgumentOutOfRangeException_If_Percentage_Is_One_Hundred_Or_More()
-		{
-			// act + assert
-			Assert.Throws<ArgumentOutOfRangeException>(() => new JitterInstance(100));
-		}
-	}
+            public ApplyForDouble()
+            {
+                jitterInstance = new JitterInstance(25);
+            }
+
+            [Fact]
+            public void Returns_A_Number_Within_Percentage_Below_And_Above_Number()
+            {
+                // act
+                var result = jitterInstance.Apply(100d);
+
+                Assert.InRange(result, 75d, 125d);
+            }
+        }
+    }
 }
