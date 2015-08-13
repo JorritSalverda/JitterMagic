@@ -47,6 +47,28 @@ The following defaults are used and can be changed by using the following code w
 Jitter.DefaultPercentage = 25;
 ```
 
+### Non-static usage
+
+If you wish to be able to inject it - for example for having different percentages in different places - you can use the JitterInstance class:
+
+```csharp
+IJitterInstance instance = new JitterInstance(25);
+```
+
+This interface and class only has the Apply methods without percentage, because you provide that during construction.
+
+So it provides the following function for integers
+
+```csharp
+int cacheDuration = instance.Apply(1000);
+```
+
+And also works for doubles
+
+```csharp
+double cacheDuration = instance.Apply(1000D);
+```
+
 Get it
 --------------------------------
 First, [install NuGet](http://docs.nuget.org/docs/start-here/installing-nuget). Then, install [JitterMagic](https://www.nuget.org/packages/JitterMagic/) from the package manager console:

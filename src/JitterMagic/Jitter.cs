@@ -5,7 +5,7 @@ namespace JitterMagic
     /// <summary>
     /// The Jitter class has methods to add entropy to any number; The degree of entropy is set by property DefaultPercentage or by the percentage in the overloaded methods
     /// </summary>
-    public static class Jitter
+	public static class Jitter
     {
         /// <summary>
         /// Determines the degree of entropy added to inputs by the simplest overloads
@@ -43,10 +43,7 @@ namespace JitterMagic
         /// <returns>A random number between <see cref="input" /> +/- percentage%</returns>
         public static int Apply(int input, int percentage)
         {
-            if (percentage <= 0 || percentage >= 100)
-            {
-                throw new ArgumentOutOfRangeException("percentage", "The percentage should be larger than 0 and smaller than 100");
-            }
+			ValidatePercentage(percentage);
 
             int lowerBoundary = input * (100 - percentage) / 100;
             int upperBoundary = input * (100 + percentage) / 100;
@@ -72,15 +69,24 @@ namespace JitterMagic
         /// <returns>A random number between <see cref="input" /> +/- DefaultPercentage %</returns>
         public static double Apply(double input, int percentage)
         {
-            if (percentage <= 0 || percentage >= 100)
-            {
-                throw new ArgumentOutOfRangeException("percentage", "The percentage should be larger than 0 and smaller than 100");
-            }
+			ValidatePercentage(percentage);
 
             double lowerBoundary = input * (100 - percentage) / 100;
             double upperBoundary = input * (100 + percentage) / 100;
 
             return lowerBoundary + (upperBoundary - lowerBoundary)*Random.NextDouble();
         }
+
+		/// <summary>
+		/// Validate if percentage is within the allowed range
+		/// </summary>
+		/// <param name="percentage">Percentage.</param>
+		internal static void ValidatePercentage(int percentage)
+		{
+			if (percentage <= 0 || percentage >= 100)
+			{
+				throw new ArgumentOutOfRangeException("percentage", "The percentage should be larger than 0 and smaller than 100");
+			}
+		}
     }
 }
