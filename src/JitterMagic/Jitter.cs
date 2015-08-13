@@ -74,7 +74,7 @@ namespace JitterMagic
             double lowerBoundary = input * (100 - percentage) / 100;
             double upperBoundary = input * (100 + percentage) / 100;
 
-            return lowerBoundary + (upperBoundary - lowerBoundary)*Random.NextDouble();
+            return lowerBoundary + (upperBoundary - lowerBoundary) * Random.NextDouble();
         }
 
         /// <summary>
