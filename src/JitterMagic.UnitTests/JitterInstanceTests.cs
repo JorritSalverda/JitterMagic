@@ -17,35 +17,44 @@ namespace JitterMagic.UnitTests
 
         public class UpdateSettings
         {
-            private readonly IJitterInstance jitterInstance;
+            private readonly IJitterInstance instance;
 
             public UpdateSettings()
             {
-                jitterInstance = new JitterInstance(new JitterSettings(percentage: 25));
+                instance = new JitterInstance(new JitterSettings(percentage: 25));
             }
 
             [Fact]
             public void Throws_An_ArgumentNullException_If_Settings_Is_Null()
             {
                 // act + assert
-                Assert.Throws<ArgumentNullException>(() => jitterInstance.UpdateSettings(null));
+                Assert.Throws<ArgumentNullException>(() => instance.UpdateSettings(null));
+            }
+
+            [Fact]
+            public void Updates_Settings_Property()
+            {
+                // act
+                Jitter.UpdateSettings(new JitterSettings(percentage: 35));
+
+                Assert.Equal(35, Jitter.Settings.Percentage);
             }
         }
 
         public class ApplyForInt
         {
-            private readonly IJitterInstance jitterInstance;
+            private readonly IJitterInstance instance;
 
             public ApplyForInt()
             {
-                jitterInstance = new JitterInstance(new JitterSettings(percentage: 25));
+                instance = new JitterInstance(new JitterSettings(percentage: 25));
             }
 
             [Fact]
             public void Returns_A_Number_Within_Percentage_Below_And_Above_Number()
             {
                 // act
-                var result = jitterInstance.Apply(100);
+                var result = instance.Apply(100);
 
                 Assert.InRange(result, 75, 125);
             }
@@ -53,18 +62,18 @@ namespace JitterMagic.UnitTests
 
         public class ApplyForDouble
         {
-            private readonly IJitterInstance jitterInstance;
+            private readonly IJitterInstance instance;
 
             public ApplyForDouble()
             {
-                jitterInstance = new JitterInstance(new JitterSettings(percentage: 25));
+                instance = new JitterInstance(new JitterSettings(percentage: 25));
             }
 
             [Fact]
             public void Returns_A_Number_Within_Percentage_Below_And_Above_Number()
             {
                 // act
-                var result = jitterInstance.Apply(100d);
+                var result = instance.Apply(100d);
 
                 Assert.InRange(result, 75d, 125d);
             }
