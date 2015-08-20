@@ -8,19 +8,32 @@ namespace JitterMagic
     public class JitterInstance:IJitterInstance
     {
         /// <summary>
-        /// Determines the degree of entropy added to inputs
+        /// Settings for this instance.
         /// </summary>
-        private readonly int percentage;
+        /// <value>The settings.</value>
+        public JitterSettings Settings { get; private set; }  
 
         /// <summary>
         /// Initializes a new instance of the <see cref="JitterInstance"/> class with passed in settings.
         /// </summary>
         /// <param name="percentage">Percentage of jitter to apply.</param>
-        public JitterInstance(int percentage)
+        public JitterInstance(JitterSettings settings)
         {
-            Jitter.ValidateParameters(percentage);
+            UpdateSettings(settings);
+        }
 
-            this.percentage = percentage;
+        /// <summary>
+        /// Updates the settings.
+        /// </summary>
+        /// <param name="settings">Settings.</param>
+        public void UpdateSettings(JitterSettings settings)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }                 
+
+            Settings = settings;
         }
 
         /// <summary>
@@ -30,7 +43,7 @@ namespace JitterMagic
         /// <returns>A random number between <see cref="input" /> +/- percentage.</returns>
         public int Apply(int input)
         {
-            return Jitter.Apply(input, percentage);
+            return Jitter.Apply(input, Settings);
         }
 
         /// <summary>
@@ -40,7 +53,7 @@ namespace JitterMagic
         /// <returns>A random number between <see cref="input" /> +/- percentage.</returns>
         public double Apply(double input)
         {
-            return Jitter.Apply(input, percentage);
+            return Jitter.Apply(input, Settings);
         }
     }
 }

@@ -21,10 +21,10 @@ Use it with either the default percentage of 25
 int cacheDuration = Jitter.Apply(1000);
 ```
 
-or by supplying a percentage yourself
+or by supplying a settings object with different percentage yourself
 
 ```csharp
-int cacheDuration = Jitter.Apply(1000, 50);
+int cacheDuration = Jitter.Apply(1000, new JitterSettings(percentage: 50));
 ```
 
 Also works for doubles
@@ -33,18 +33,18 @@ Also works for doubles
 double cacheDuration = Jitter.Apply(1000D);
 ```
 
-or by supplying a percentage yourself
+or by supplying different settings yourself
 
 ```csharp
-double cacheDuration = Jitter.Apply(1000D, 50);
+double cacheDuration = Jitter.Apply(1000D, new JitterSettings(percentage: 50));
 ```
 
-### Changing defaults
+### Changing settings
 
-The following defaults are used and can be changed by using the following code with different values
+The following default settings are used and can be changed by using the following code with different values
 
 ```csharp
-Jitter.DefaultPercentage = 25;
+Jitter.UpdateSettings(new JitterSettings(percentage: 25));
 ```
 
 ### Non-static usage
@@ -52,10 +52,10 @@ Jitter.DefaultPercentage = 25;
 If you wish to be able to inject it - for example for having different percentages in different places - you can use the JitterInstance class:
 
 ```csharp
-IJitterInstance instance = new JitterInstance(25);
+IJitterInstance instance = new JitterInstance(new JitterSettings(percentage: 25));
 ```
 
-This interface and class only has the Apply methods without percentage, because you provide that during construction.
+This interface and class only has the Apply methods without settings, because you already provide those during construction.
 
 So it provides the following function for integers
 

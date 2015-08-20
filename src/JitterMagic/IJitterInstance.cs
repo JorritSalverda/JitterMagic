@@ -8,6 +8,18 @@ namespace JitterMagic
     public interface IJitterInstance
     {
         /// <summary>
+        /// Settings for this instance.
+        /// </summary>
+        /// <value>The settings.</value>
+        JitterSettings Settings { get; }
+
+        /// <summary>
+        /// Updates the settings.
+        /// </summary>
+        /// <param name="settings">Settings.</param>
+        void UpdateSettings(JitterSettings settings);
+
+        /// <summary>
         /// Applies jitter to the <see cref="input" /> using the settings set in the constructor.
         /// </summary>
         /// <param name="input">A double you want to apply jitter to.</param>

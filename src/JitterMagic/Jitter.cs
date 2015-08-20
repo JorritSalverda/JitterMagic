@@ -8,9 +8,10 @@ namespace JitterMagic
     public static class Jitter
     {
         /// <summary>
-        /// Determines the degree of entropy added to inputs by the simplest overloads.
+        /// Gets or sets the settings for usage of this class.
         /// </summary>
-        public static int DefaultPercentage { get; set; }
+        /// <value>The default setting.</value>
+        public static JitterSettings Settings { get; private set; }    
 
         /// <summary>
         /// Used for applying randomness
@@ -22,7 +23,21 @@ namespace JitterMagic
         /// </summary>
         static Jitter()
         {
-            DefaultPercentage = 25;
+            Settings = new JitterSettings();
+        }
+
+        /// <summary>
+        /// Updates the settings.
+        /// </summary>
+        /// <param name="settings">Settings.</param>
+        public static void UpdateSettings(JitterSettings settings)
+        {
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
+
+            Settings = settings;
         }
 
         /// <summary>
@@ -32,21 +47,24 @@ namespace JitterMagic
         /// <returns>A random number between <see cref="input" /> +/- DefaultPercentage.</returns>
         public static int Apply(int input)
         {
-            return Apply(input, DefaultPercentage);
+            return Apply(input, Settings);
         }
 
         /// <summary>
         /// Applies jitter to the <see cref="input" /> using the passed in settings.
         /// </summary>
         /// <param name="input">An integer you want to apply jitter to.</param>
-        /// <param name="percentage">An integer that has the percentage of the <see cref="input" /> to go below and above the <see cref="input" /> as outer bounds.</param>
+        /// <param name="settings">Object that contains settings.</param>
         /// <returns>A random number between <see cref="input" /> +/- percentage.</returns>
-        public static int Apply(int input, int percentage)
+        public static int Apply(int input, JitterSettings settings)
         {
-            ValidateParameters(percentage);
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
 
-            int lowerBoundary = input * (100 - percentage) / 100;
-            int upperBoundary = input * (100 + percentage) / 100;
+            int lowerBoundary = input * (100 - settings.Percentage) / 100;
+            int upperBoundary = input * (100 + settings.Percentage) / 100;
 
             return Random.Next(lowerBoundary, upperBoundary);
         }
@@ -58,7 +76,7 @@ namespace JitterMagic
         /// <returns>A random number between <see cref="input" /> +/- DefaultPercentage.</returns>
         public static double Apply(double input)
         {
-            return Apply(input, DefaultPercentage);
+            return Apply(input, Settings);
         }
 
         /// <summary>
@@ -67,26 +85,17 @@ namespace JitterMagic
         /// <param name="input">A double you want to apply jitter to.</param>
         /// <param name="percentage">An integer that has the percentage of the <see cref="input" /> to go below and above the <see cref="input" /> as outer bounds.</param>
         /// <returns>A random number between <see cref="input" /> +/- percentage.</returns>
-        public static double Apply(double input, int percentage)
+        public static double Apply(double input, JitterSettings settings)
         {
-            ValidateParameters(percentage);
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings");
+            }
 
-            double lowerBoundary = input * (100 - percentage) / 100;
-            double upperBoundary = input * (100 + percentage) / 100;
+            double lowerBoundary = input * (100 - settings.Percentage) / 100;
+            double upperBoundary = input * (100 + settings.Percentage) / 100;
 
             return lowerBoundary + (upperBoundary - lowerBoundary) * Random.NextDouble();
-        }
-
-        /// <summary>
-        /// Validate parameters.
-        /// </summary>
-        /// <param name="percentage">Percentage.</param>
-        internal static void ValidateParameters(int percentage)
-        {
-            if (percentage <= 0 || percentage >= 100)
-            {
-                throw new ArgumentOutOfRangeException("percentage", "The percentage should be larger than 0 and smaller than 100");
-            }
         }
     }
 }

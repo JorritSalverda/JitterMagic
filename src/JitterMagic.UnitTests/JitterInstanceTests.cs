@@ -8,17 +8,27 @@ namespace JitterMagic.UnitTests
         public class Constructor
         {
             [Fact]
-            public void Constructor_Throws_An_ArgumentOutOfRangeException_If_Percentage_Is_Zero_Or_Less()
+            public void Constructor_Throws_An_ArgumentNullException_If_Settings_Is_Null()
             {
                 // act + assert
-                Assert.Throws<ArgumentOutOfRangeException>(() => new JitterInstance(0));
+                Assert.Throws<ArgumentOutOfRangeException>(() => new JitterInstance(null));
+            }
+        }
+
+        public class UpdateSettings
+        {
+            private readonly IJitterInstance jitterInstance;
+
+            public UpdateSettings()
+            {
+                jitterInstance = new JitterInstance(new JitterSettings(percentage: 25));
             }
 
             [Fact]
-            public void Constructor_Throws_An_ArgumentOutOfRangeException_If_Percentage_Is_One_Hundred_Or_More()
+            public void Constructor_Throws_An_ArgumentNullException_If_Settings_Is_Null()
             {
                 // act + assert
-                Assert.Throws<ArgumentOutOfRangeException>(() => new JitterInstance(100));
+                Assert.Throws<ArgumentOutOfRangeException>(() => jitterInstance.UpdateSettings(null));
             }
         }
 
@@ -28,7 +38,7 @@ namespace JitterMagic.UnitTests
 
             public ApplyForInt()
             {
-                jitterInstance = new JitterInstance(25);
+                jitterInstance = new JitterInstance(new JitterSettings(percentage: 25));
             }
 
             [Fact]
@@ -47,7 +57,7 @@ namespace JitterMagic.UnitTests
 
             public ApplyForDouble()
             {
-                jitterInstance = new JitterInstance(25);
+                jitterInstance = new JitterInstance(new JitterSettings(percentage: 25));
             }
 
             [Fact]
