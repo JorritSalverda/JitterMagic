@@ -8,10 +8,10 @@ namespace JitterMagic.UnitTests
         public class Constructor
         {
             [Fact]
-            public void Constructor_Throws_An_ArgumentNullException_If_Settings_Is_Null()
+            public void Throws_An_ArgumentNullException_If_Settings_Is_Null()
             {
                 // act + assert
-                Assert.Throws<ArgumentOutOfRangeException>(() => new JitterInstance(null));
+                Assert.Throws<ArgumentNullException>(() => new JitterInstance(null));
             }
         }
 
@@ -25,10 +25,10 @@ namespace JitterMagic.UnitTests
             }
 
             [Fact]
-            public void Constructor_Throws_An_ArgumentNullException_If_Settings_Is_Null()
+            public void Throws_An_ArgumentNullException_If_Settings_Is_Null()
             {
                 // act + assert
-                Assert.Throws<ArgumentOutOfRangeException>(() => jitterInstance.UpdateSettings(null));
+                Assert.Throws<ArgumentNullException>(() => jitterInstance.UpdateSettings(null));
             }
         }
 

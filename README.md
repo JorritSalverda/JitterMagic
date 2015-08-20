@@ -41,7 +41,7 @@ double cacheDuration = Jitter.Apply(1000D, new JitterSettings(percentage: 50));
 
 ### Changing settings
 
-The following default settings are used and can be changed by using the following code with different values
+The following default settings are used and can be changed by using the code below with different values
 
 ```csharp
 Jitter.UpdateSettings(new JitterSettings(percentage: 25));
