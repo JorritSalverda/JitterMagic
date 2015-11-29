@@ -2,7 +2,7 @@ language: csharp
 solution: ./src/JitterMagic.sln
 install:
   - nuget restore ./src/JitterMagic.sln
-  - nuget install xunit.runner.console -Version 2.1.0 -OutputDirectory testrunner
+  #- nuget install xunit.runner.console -Version 2.1.0 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release ./src/JitterMagic.sln
-  - mono ./testrunner/xunit.runner.console.2.1.0/tools/xunit.console.exe ./src/JitterMagic.UnitTests/bin/Release/JitterMagic.UnitTests.dll -noappdomain
+  #- mono ./testrunner/xunit.runner.console.2.1.0/tools/xunit.console.exe ./src/JitterMagic.UnitTests/bin/Release/JitterMagic.UnitTests.dll -noappdomain
