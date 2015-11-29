@@ -1,0 +1,37 @@
+{
+  "version": "1.0.0-*",
+  "tooling": {
+    "defaultNamespace": "JitterMagic.UnitTests"
+  },
+  
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/JorritSalverda/JitterMagic.git"
+  },  
+
+  "dependencies": {
+    "JitterMagic": "",
+    "xunit": "2.1.0",
+    "xunit.runner.dnx": "2.1.0-rc1-build204"
+  },
+  
+  "commands": {
+    "test" : "xunit.runner.dnx"
+  },
+
+  "frameworks": {
+    "dnxcore50": {
+       "dependencies": {
+          "System.Collections": "4.0.0.0",
+          "System.Collections.Concurrent": "4.0.0.0",
+          "System.ComponentModel": "4.0.0.0",
+          "System.Linq": "4.0.0.0",
+          "System.Reflection": "4.0.10.0",
+          "System.Runtime": "4.0.20.0",
+          "System.Runtime.InteropServices": "4.0.10.0",
+          "System.Threading": "4.0.0.0",
+          "System.Threading.Tasks": "4.0.0.0"
+       }
+    }
+  }
+}
