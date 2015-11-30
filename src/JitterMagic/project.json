@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-*",
+  "version": "1.0.0.*",
   "description": "A c# library to add jitter to cache durations and retry intervals to increase entropy in your system and prevent thundering herds",
   "projectUrl": "https://github.com/JorritSalverda/JitterMagic",
   "licenseUrl": "https://raw.githubusercontent.com/JorritSalverda/JitterMagic/master/LICENSE",
