@@ -1,13 +1,12 @@
 {
-  "version": "1.0.3-*",
+  "version": "1.0.0-*",
   "tooling": {
     "defaultNamespace": "JitterMagic.UnitTests"
   },
   
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/JorritSalverda/JitterMagic.git"
-  },  
+  "compilationOptions": {
+     "warningsAsErrors": true
+  },
 
   "dependencies": {
     "JitterMagic": "",
