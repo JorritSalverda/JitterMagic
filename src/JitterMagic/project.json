@@ -24,6 +24,10 @@
 
   "frameworks": {
     "dotnet": { },
-    "net45": { }
+    "net45": {
+      "dependencies":{
+        "NET45SpecificPackage":"1.0.0"
+      }
+    }
   }
 }
