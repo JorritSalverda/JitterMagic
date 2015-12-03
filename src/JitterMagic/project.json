@@ -18,22 +18,11 @@
   },  
 
   "dependencies": {
+    "System.Runtime": "4.0.20",
+    "System.Runtime.Extensions": "4.0.10"
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": {
-       "dependencies": {
-          "System.Collections": "4.0.0.0",
-          "System.Collections.Concurrent": "4.0.0.0",
-          "System.ComponentModel": "4.0.0.0",
-          "System.Linq": "4.0.0.0",
-          "System.Reflection": "4.0.10.0",
-          "System.Runtime": "4.0.20.0",
-          "System.Runtime.InteropServices": "4.0.10.0",
-          "System.Threading": "4.0.0.0",
-          "System.Threading.Tasks": "4.0.0.0"
-       }
-    }
+    "dotnet": { }
   }
 }
