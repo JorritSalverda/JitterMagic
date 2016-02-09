@@ -28,6 +28,6 @@
         "System.Runtime.Extensions": "4.0"   
       }
     },
-    "net45": { }
+    "net40": { }
   }
 }
