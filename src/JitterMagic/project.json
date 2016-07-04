@@ -32,6 +32,10 @@
       "dependencies": {
         "Microsoft.NETCore.App": "1.0.0"
       }
-    }
+    },
+    "net20": {},
+    "net35": {},
+    "net40": {},
+    "net45": {}
   }
 }
