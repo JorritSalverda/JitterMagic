@@ -3,25 +3,27 @@
   "tooling": {
     "defaultNamespace": "JitterMagic.UnitTests"
   },
+
+  "testRunner": "xunit",
   
-  "compilationOptions": {
-     "warningsAsErrors": true
+  "buildOptions": {
+    "warningsAsErrors": true
   },
 
   "dependencies": {
-    "JitterMagic": "",
-    "xunit": "2.1.0"
-  },
-  
-  "commands": {
-    "test" : "xunit.runner.dnx"
+    "JitterMagic": "1.0.5-*",
+    "xunit": "2.1.0",
+    "dotnet-test-xunit": "1.0.0-*"
   },
 
   "frameworks": {
-    "dotnet": { },
-    "dnxcore50": {
+    "netcoreapp1.0": {
+      "imports": [ "dnxcore50", "portable-net45+win8" ],
       "dependencies": {
-        "xunit.runner.dnx": "2.1.0-*"        
+        "Microsoft.NETCore.App": {
+          "version": "1.0.0",
+          "type": "platform"
+        }
       }
     }
   }
